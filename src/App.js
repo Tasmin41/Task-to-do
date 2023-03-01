@@ -1,5 +1,5 @@
 import './App.css';
-import FormValidate from './components/FormValidate';
+
 
 import Index from './components/Index';
 
