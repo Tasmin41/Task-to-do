@@ -1,15 +1,15 @@
-import './App.css';
-
-
-import Index from './components/Index';
+import "./App.css";
+import { Provider } from "react-redux";
+import store from "./app/slices/store";
+import Index from "./components/Index";
 
 function App() {
   return (
-<div>
-<Index/>
-
-</div>
-    
+    <Provider store={store}>
+      <div>
+        <Index />
+      </div>
+    </Provider>
   );
 }
 
