@@ -1,10 +1,15 @@
 import './App.css';
+import FormValidate from './components/FormValidate';
 
 import Index from './components/Index';
 
 function App() {
   return (
-    <Index/>
+<div>
+<Index/>
+
+</div>
+    
   );
 }
 

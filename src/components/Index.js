@@ -6,20 +6,8 @@ import TaskCreator from './TaskCreator';
 
 const Index = () => {
 
-    const [tasks,setTasks] = useState([
-        {
-            id:1,
-            name:"tasmin",
-            age:23,
-            done:true
-        },
-        {
-            id:2,
-            name:"fahim",
-            age:23,
-            done:false
-        }
-    ]);
+    const [tasks,setTasks] = useState([]);
+
 
     const newTaskAdd = (newTask)=>{
         setTasks((oldTask)=>{
@@ -52,7 +40,7 @@ const Index = () => {
         <div className='container'>
         <h1 className='task-titlte'>All Tasks</h1>
             <TaskCreator newTaskAdd = {newTaskAdd}/>
-            <div className='tasks'>
+            {tasks.length>=1 &&  <div className='tasks'>
             {
             tasks.map((task)=>{
                 const {id,name,age,done} = task;
@@ -60,8 +48,8 @@ const Index = () => {
                     <div>  
                         <input type="checkbox" checked={done} onChange={()=>{handleCheckbox(id)}}/>
                         <div>                        
-                            <h3>{name}</h3>
-                            <p>{age}</p>
+                            <h3 style={done ? {textDecoration:"line-through"}:null}>{name}</h3>
+                            <p style={done ? {textDecoration:"line-through"}:null}>{age}</p>
                         </div>                  
 
                     </div>
@@ -69,7 +57,8 @@ const Index = () => {
                 </div>
             })
         }
-            </div>
+            </div>}
+
         </div>
     </section>
   )
